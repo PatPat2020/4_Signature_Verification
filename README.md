@@ -5,7 +5,11 @@ Pattern Recognition - Task 4
 Download the files given for this task and put everything in a folder named "groundtruth"
 
 ## Feature selection and normalization
-A dictionairy was created for the validation and enrollement data to fasciliate the extraction of features and to better save them for the next steps in the project. We extracted the time, x, y, and pressure directly from the data that was given. The velocities in the x and y directions were calculated with time increments of 0.01 seconds. Our formula was to take the previous point and subtract the current point from it before dividing by the time difference of 0.01. After troubles understanding the data, we concluded that we don't need the penup feature. The pen position (x, y) is recorded even though the pen is in an up position, and the information of position and velocity will still be used to compare signatures.
+After taking the data from the text files to put them in arrays, a dictionairy was created for the validation and enrollement data to fasciliate the extraction of features and to better save them for the next steps in the project.
+
+We extracted the time, x, y, and pressure directly from the data that was given. The velocities in the x and y directions were calculated with time increments of 0.01 seconds. Our formula was to take the previous point and subtract the current point from it before dividing by the time difference of 0.01. 
+After troubles understanding the data, we concluded that we din't need the penup feature. The pen position (x, y) is recorded even though the pen is in an up position, and the information of position and velocity will still be used to compare signatures.
+
 After extracting the features for each signature we normalized them. This was done by taking each feature and subtracting the minimum value in the feature array from it and dividing this difference by the difference between the max and min values in the feature array. All normalized values fall in the interval of [0,1]. The time was normalized in the DTW step since we had to manipulate it to get signatures of same time length.
 
 ## Results
